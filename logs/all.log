@@ -1,0 +1,4 @@
+time="2022-08-02T21:37:33+03:00" level=info msg="я ебу собак" func="%s()main.main" file="%s%dapp.goC:/Users/Иван/GolandProjects/restapi/cmd/main/app.go"
+time="2022-08-02T21:37:33+03:00" level=info msg="register user handler" func="%s()main.main" file="%s%dapp.goC:/Users/Иван/GolandProjects/restapi/cmd/main/app.go"
+time="2022-08-02T21:40:15+03:00" level=info msg="я ебу собак" func="%s()main.main" file="%s%dapp.goC:/Users/Иван/GolandProjects/restapi/cmd/main/app.go"
+time="2022-08-02T21:40:15+03:00" level=info msg="register user handler" func="%s()main.main" file="%s%dapp.goC:/Users/Иван/GolandProjects/restapi/cmd/main/app.go"

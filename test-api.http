@@ -1,0 +1,10 @@
+POST http://localhost:1234/users
+Content-Type: application/json
+{
+  "id": 999,
+  "value": "content"
+}
+
+### GET request with parameter
+GET http://localhost:1234/users
+Accept: application/json

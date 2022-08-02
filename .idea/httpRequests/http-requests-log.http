@@ -1,0 +1,170 @@
+GET http://localhost:1234/users
+Accept: application/json
+
+<> 2022-08-02T214023.200.txt
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{:
+  "id": 999,
+  "value": "content"
+}:
+
+<> 2022-08-02T214023.400.txt
+
+###
+
+GET http://localhost:1234/users
+Accept: application/json
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{:
+  "id": 999,
+  "value": "content"
+}:
+
+###
+
+GET http://localhost:1234/users
+Accept: application/json
+
+<> 2022-08-02T213747.200.txt
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{:
+  "id": 999,
+  "value": "content"
+}:
+
+<> 2022-08-02T213746.400.txt
+
+###
+
+GET http://localhost:1234/users
+Accept: application/json
+
+<> 2022-08-02T200803.200.txt
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{:
+  "id": 999,
+  "value": "content"
+}:
+
+<> 2022-08-02T200802.400.txt
+
+###
+
+GET https://httpbin.org/get?show_env=1
+Accept: application/json
+
+<> 2022-08-02T200649.200.json
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{:
+  "id": 999,
+  "value": "content"
+}:
+
+<> 2022-08-02T200647.400.txt
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+
+<> 2022-08-02T200149.405.txt
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+
+<> 2022-08-02T200046.405.txt
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+
+<> 2022-08-02T200003.405.txt
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{}:
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{}:
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{}:
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{}:
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{}:
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{}:
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{}:
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+{}:
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+
+###
+
+POST http://localhost:1234/users
+Content-Type: application/json
+
+###
+
