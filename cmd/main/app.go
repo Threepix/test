@@ -1,12 +1,18 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"github.com/julienschmidt/httprouter"
-	"log"
 	"net"
 	"net/http"
+	"os"
+	"path"
+	"path/filepath"
+	config2 "restapi/cmd/iternal/config"
 	"restapi/cmd/iternal/user"
+	"restapi/cmd/iternal/user/db"
+	"restapi/cmd/pkg/client/mongodb"
 	"restapi/cmd/pkg/logging"
 	"time"
 )
@@ -15,25 +21,61 @@ func main() {
 	logger := logging.Getlogger()
 	logger.Info("я ебу собак")
 	router := httprouter.New()
+
+	cfg := config2.GetConfig()
+
+	cfgMongo := cfg.MongoDB
+	client, err := mongodb.NewClient(context.Background(), cfgMongo.Host, cfgMongo.Port, cfgMongo.Username, cfgMongo.Password, cfgMongo.Database, cfgMongo.Auth_db)
+	if err != nil {
+		panic(err)
+	}
+	storage := db.NewStorage(client, cfg.MongoDB.Collection, logger)
+
 	logger.Info("register user handler")
 	handler := user.NewHandler(logger)
 	handler.Register(router)
 
-	start(router)
+	start(router, cfg)
 }
 
-func start(router *httprouter.Router) {
-	log.Println("start app")
-	listener, err := net.Listen("tcp", ":1234")
-	if err != nil {
-		panic(err)
+func start(router *httprouter.Router, cfg *config2.Config) {
+	logger := logging.Getlogger()
+	logger.Info("start app")
+
+	var listener net.Listener
+	var listenErr error
+
+	if cfg.Listen.Type == "sock" {
+		appDir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+		if err != nil {
+			logger.Fatal(err)
+		}
+		logger.Info("creating socket")
+		socketPath := path.Join(appDir, "app.sock")
+
+		logger.Info("create unix socket")
+		listener, listenErr = net.Listen("unix", socketPath)
+		logger.Info("listen unix socket")
+		logger.Infof("server is listening unix socket :%s", socketPath)
+		if err != nil {
+			logger.Fatal(err)
+		}
+
+	} else {
+		logger.Info("listen tcp")
+		listener, listenErr = net.Listen("tcp", fmt.Sprintf("%s:%s", cfg.Listen.BindIp, cfg.Listen.Port))
+		logger.Infof("server listening port %s:%s", cfg.Listen.BindIp, cfg.Listen.Port)
+		if listenErr != nil {
+			panic(listenErr)
+		}
 	}
+
 	server := &http.Server{
 		Handler:      router,
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
 	}
-	log.Fatalln(server.Serve(listener))
+	logger.Fatal(server.Serve(listener))
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
