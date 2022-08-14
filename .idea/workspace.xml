@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4ac0e273-d574-4b2d-8628-4e265e74a35f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/iternal/user/db/mongodb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/iternal/user/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cmd/pkg/client/mongodb/mongodb.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/iternal/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/iternal/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/iternal/user/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/iternal/user/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/iternal/user/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/iternal/user/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/iternal/user/storage.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/iternal/user/storage.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/main/app.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main/app.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/pkg/logging/logging.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/pkg/logging/logging.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/all.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/all.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-api.http" beforeDir="false" afterPath="$PROJECT_DIR$/test-api.http" afterDir="false" />
     </list>
@@ -93,6 +83,16 @@
       <output_directory value="$PROJECT_DIR$/build" />
       <method v="2" />
     </configuration>
+    <configuration name="go build restapi/cmd/main" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="restapi" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="restapi/cmd/main" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/cmd/main/app.go" />
+      <output_directory value="$PROJECT_DIR$/build" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build restapi/cmd/main" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="restapi" />
       <working_directory value="$PROJECT_DIR$" />
@@ -130,7 +130,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build app.go" />
       <item itemvalue="Go Build.go build restapi/cmd/main" />
       <item itemvalue="HTTP Request.All in test-api" />
       <item itemvalue="HTTP Request.test-api | #1" />
@@ -138,10 +137,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build restapi/cmd/main" />
+        <item itemvalue="HTTP Request.test-api | #1" />
         <item itemvalue="Go Build.go build restapi/cmd/main" />
         <item itemvalue="HTTP Request.All in test-api" />
-        <item itemvalue="Go Build.go build restapi/cmd/main" />
-        <item itemvalue="HTTP Request.test-api | #1" />
       </list>
     </recent_temporary>
   </component>

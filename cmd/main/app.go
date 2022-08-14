@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"github.com/julienschmidt/httprouter"
 	"net"
@@ -11,8 +10,6 @@ import (
 	"path/filepath"
 	config2 "restapi/cmd/iternal/config"
 	"restapi/cmd/iternal/user"
-	"restapi/cmd/iternal/user/db"
-	"restapi/cmd/pkg/client/mongodb"
 	"restapi/cmd/pkg/logging"
 	"time"
 )
@@ -23,13 +20,6 @@ func main() {
 	router := httprouter.New()
 
 	cfg := config2.GetConfig()
-
-	cfgMongo := cfg.MongoDB
-	client, err := mongodb.NewClient(context.Background(), cfgMongo.Host, cfgMongo.Port, cfgMongo.Username, cfgMongo.Password, cfgMongo.Database, cfgMongo.Auth_db)
-	if err != nil {
-		panic(err)
-	}
-	storage := db.NewStorage(client, cfg.MongoDB.Collection, logger)
 
 	logger.Info("register user handler")
 	handler := user.NewHandler(logger)
@@ -89,3 +79,4 @@ func handleConnection(conn net.Conn) {
 	defer conn.Close()
 	conn.Write([]byte("fuckshitfuck"))
 }
+
